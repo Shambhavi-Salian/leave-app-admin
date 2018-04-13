@@ -1,4 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using JsonModelClass;
+using Leave_appz.Data;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using Xamarin.Forms;
 
 namespace Leave_appz
 {
@@ -9,6 +15,96 @@ namespace Leave_appz
             InitializeComponent();
             backgroundImage.Source = ImageSource.FromResource("Leave_appz.Assets.background.png");
             whitelogoImage.Source = ImageSource.FromResource("Leave_appz.Assets.whitelogoss.png");
+        }
+
+        public void DisplayAlertMessage(string message)
+        {
+            DisplayAlert("Warning", message, "Ok");
+        }
+
+        void LoginProcedure(object sender, EventArgs eventArgs)
+        {
+            UserDataModel userDataModel = new UserDataModel(user_email.Text, user_password.Text);
+            if (userDataModel.checkInformation())
+            {
+                var RestURL = "http://zymolytic-brass.000webhostapp.com/?id=2";
+                //RestService restService = new RestService();
+                //restService.PostRequest(RestURL, userDataModel);
+                PostRequest(RestURL, userDataModel);
+
+            }
+
+            else
+            {
+                DisplayAlertMessage("Username and Password text fields are empty");
+            }
+
+        }
+
+
+        async void PostRequest(string URL, UserDataModel userDataModel)
+        {
+            System.Diagnostics.Debug.WriteLine("asa");
+            var formContent = new FormUrlEncodedContent(new[]
+                {
+               new KeyValuePair<string, string>("id", "1"),
+               new KeyValuePair<string, string>("useremail", userDataModel.email_id),
+               new KeyValuePair<string, string>("password", userDataModel.user_password),
+           });
+
+            var myHttpClient = new HttpClient();
+            var response = await myHttpClient.PostAsync(URL, formContent);
+
+            var json = await response.Content.ReadAsStringAsync();
+            System.Diagnostics.Debug.WriteLine(json);
+
+            try
+            {
+                var userModel = JsonConvert.DeserializeObject<JsonModelClass.UserDataModel>(json);
+                if (userModel.email_id.Trim().Equals(user_email.Text.Trim()) && userModel.user_password.Trim().Equals(user_password.Text.Trim()))
+                {
+                    Application.Current.Properties["email"] = user_email.Text.Trim();
+                    Application.Current.Properties["password"] = user_password.Text.Trim();
+                    //await DisplayAlert("Warning", "login", "ok");
+                    Application.Current.MainPage = new MainNavigationPage();
+                    // await Navigation.PushAsync(new MainNavigationPage());
+                }
+                else
+                {
+                    await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
+            }
+
+
+        }
+
+
+        public async void CompareCredentials(UserDataModel userModel)
+        {
+            try {
+                if (userModel.email_id.Trim().Equals(user_email.Text.Trim()) && userModel.user_password.Trim().Equals(user_password.Text.Trim()))
+                {
+                    Application.Current.Properties["email"] = user_email.Text.Trim();
+                    Application.Current.Properties["password"] = user_password.Text.Trim();
+                    await DisplayAlert("warning", "Login Success", "Ok");
+                    await App.Current.MainPage.Navigation.PushAsync(new MainNavigationPage(), true);
+                }
+                else
+                {
+                   await DisplayAlert("warning","Wrong User Name Or Password","Ok");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
+            }
+
         }
     }
 }

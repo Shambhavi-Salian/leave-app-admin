@@ -49,6 +49,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\BindablePicker.cs" />
+    <Compile Include="Data\EnumerableExtension.cs" />
+    <Compile Include="Data\RestService.cs" />
+    <Compile Include="JsonModelClass\UserDataModel.cs" />
     <Compile Include="Leave_appzPage.xaml.cs">
       <DependentUpon>Leave_appzPage.xaml</DependentUpon>
     </Compile>
@@ -74,6 +78,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
