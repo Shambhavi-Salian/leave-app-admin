@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Leave_appz.Views.CurrentdayAbsent"
+             Title="Leave Per Day"
+             BackgroundImage="background.png">
+    <StackLayout
+        Orientation="Vertical">
+        <StackLayout
+        Orientation="Horizontal">
+            <Label x:Name="DateLabel"
+                                  Margin="16,24,0,16"
+                               FontAttributes="Bold"
+                               FontSize="Large" 
+                               TextColor="White"
+                   VerticalOptions="Center"/>
+            <DatePicker x:Name="PickerDate" MinimumDate="05-24-2017" Format="dd-mm-yyyy" MaximumDate="12-31-2050" IsVisible="False" DateSelected="PickerDate_DateSelected"
+                        VerticalOptions="Center"
+                         Margin="32,24,24,16"/>
+            <Image  Source="ic_date_range_white.png"  HorizontalOptions="End" VerticalOptions="Center"  Margin="24,24,24,16">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </StackLayout>
+       
+     
+
+        <AbsoluteLayout VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="Transparent"
+                  >
+                    <ListView 
+                 x:Name="listview"
+            ItemsSource="{Binding Users}"
+          HasUnevenRows="True"
+        
+        SeparatorVisibility="None"
+                VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+                     IsVisible="True">
+
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame
+                IsClippedToBounds="False"
+                HasShadow="True"
+                CornerRadius="12"
+                HorizontalOptions="FillAndExpand"
+                         Margin="3,4,6,4">
+                                        <StackLayout Margin="3,0,6,0"
+                                 BackgroundColor="White"
+                                  >
+                                            <Label Text="{Binding auto_id}"
+                                  Margin="4,1,8,1"
+                               FontAttributes="Bold"
+                               FontSize="Medium" 
+                               TextColor="OrangeRed"/>
+                                            <Label Text="{Binding email_id}"
+                                     Margin="4,1,8,1"
+                               FontAttributes="Bold"
+                               FontSize="Medium" 
+                               TextColor="OrangeRed"/>
+                                            <Label Text="{Binding type_of_leave}"
+                               Margin="4,1,8,1"
+                               FontSize="Small" 
+                                   TextColor="OrangeRed"/>
+                                            <Label Text="{Binding description}"
+                               Margin="4,1,8,1"
+                               FontSize="Small" 
+                               TextColor="OrangeRed"/>
+
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+           
+        </AbsoluteLayout>
+
+        
+       
+        
+    </StackLayout>
+</ContentPage>

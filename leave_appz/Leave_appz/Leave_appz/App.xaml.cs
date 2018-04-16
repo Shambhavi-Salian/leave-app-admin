@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.ObjectModel;
+using Xamarin.Forms;
+using Leave_appz.Views;
 
 namespace Leave_appz
 {
@@ -7,14 +9,33 @@ namespace Leave_appz
         public App()
         {
             InitializeComponent();
-            MainPage = new Leave_appzPage();
-            //SET PRIMARY TOOLBAR COLOR
-            Current.Resources = new ResourceDictionary();
-            Color xamarin_color = Color.DarkOrange;
-            var navigationStyle = new Style(typeof(NavigationPage));
-            var barBackgroundColorSetter = new Setter { Property = NavigationPage.BarBackgroundColorProperty, Value = xamarin_color };
-            navigationStyle.Setters.Add(barBackgroundColorSetter);
-            Current.Resources.Add(navigationStyle);
+
+         //   var nav = new NavigationPage
+           // {
+            //    Title = "Detail",
+               
+                
+            //};
+           /// nav.PushAsync(new MainNavigationPage() { Title = "Home" });
+//nav.BarBackgroundColor = Color.OrangeRed;
+
+          //  var mdp = new MainNavigationPage()
+           // {
+               
+              //  Detail = nav,
+              
+           // };
+           // MainPage = mdp;
+           MainPage = new MainNavigationPage();
+ 
+            //Background color
+            //MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
+
+            //Title color
+            // MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
+
+            //var navigationPage = Application.Current.MainPage as NavigationPage;
+            // navigationPage.BarBackgroundColor = Color.Black;
         }
 
         protected override void OnStart()

@@ -4,8 +4,16 @@
              x:Class="Leave_appz.Views.FirstView"
              BackgroundImage="background.png">
     <StackLayout Orientation="Vertical">
+        <Label
+           Text="1234567890_ID" 
+           Margin="30,20,6,0"
+           TextColor="White"
+           FontSize="Medium"/>
 
-        <Picker x:Name="picker" TextColor="White" SelectedIndexChanged="OnPickerSelectedIndexChanged"/>
+        <Label Text="SHAMBHAVI" 
+           Margin="30,10,6,0"
+           TextColor="White"
+           FontSize="Medium"/>
 
         <Grid HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand">
@@ -20,37 +28,36 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-
-            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="0" Text="Date"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="0" Text="1/1/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="0" Text="2/2/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="1" Text="Type Of Leave" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="2" Text="Status" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="2" Text="Granted" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="2" Text="Rejected" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="0" Text="Date"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="0" Text="1/1/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="0" Text="2/2/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="1" Text="Type Of Leave" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="2" Text="Status" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="2" Text="Granted" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="2" Text="Rejected" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
         </Grid>
         <StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Frame CornerRadius="10"  
                 BackgroundColor="White"
-                Margin="60,0,0,0">
+                Margin="40,0,0,0">
                     <Label Text="+3"
                         TextColor="Black"
                         FontSize="Large"/>
                 </Frame>
                 <Frame CornerRadius="10"  
                 BackgroundColor="White"
-                Margin="47,0,0,0">
+                Margin="35,0,0,0">
                     <Label Text="+8"
                         TextColor="Black"
                         FontSize="Large"/>
                 </Frame>
                 <Frame CornerRadius="10"  
                 BackgroundColor="White"
-                Margin="37,0,0,0">
+                Margin="35,0,0,0">
                     <Label Text="+9"                       
                         TextColor="Black"
                         FontSize="Large"/>
@@ -59,15 +66,15 @@
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Sick"
-                    Margin="75,5,0,50"
+                    Margin="50,5,0,50"
                     TextColor="White"
                     FontSize="Medium"/>
                 <Label Text="Casual"
-                    Margin="70,5,0,50"
+                    Margin="63,5,0,50"
                     TextColor="White"
                     FontSize="Medium"/>
                 <Label Text="Earned"
-                    Margin="50,5,0,50"
+                    Margin="45,5,0,50"
                     TextColor="White"
                     FontSize="Medium"/>
             </StackLayout>
