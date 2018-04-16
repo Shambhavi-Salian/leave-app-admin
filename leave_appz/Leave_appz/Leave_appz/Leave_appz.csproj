@@ -49,9 +49,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\BindablePicker.cs" />
-    <Compile Include="Data\EnumerableExtension.cs" />
-    <Compile Include="Data\RestService.cs" />
     <Compile Include="JsonModelClass\UserDataModel.cs" />
     <Compile Include="Leave_appzPage.xaml.cs">
       <DependentUpon>Leave_appzPage.xaml</DependentUpon>
@@ -95,6 +92,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\" />
     <Folder Include="New Folder1\" />
   </ItemGroup>
   <ItemGroup>
