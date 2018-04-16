@@ -7,8 +7,14 @@ namespace Leave_appz
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainNavigationPage();
+            MainPage = new Leave_appzPage();
+            //SET PRIMARY TOOLBAR COLOR
+            Current.Resources = new ResourceDictionary();
+            Color xamarin_color = Color.DarkOrange;
+            var navigationStyle = new Style(typeof(NavigationPage));
+            var barBackgroundColorSetter = new Setter { Property = NavigationPage.BarBackgroundColorProperty, Value = xamarin_color };
+            navigationStyle.Setters.Add(barBackgroundColorSetter);
+            Current.Resources.Add(navigationStyle);
         }
 
         protected override void OnStart()

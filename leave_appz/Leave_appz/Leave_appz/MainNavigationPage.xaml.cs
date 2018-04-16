@@ -23,7 +23,6 @@ namespace Leave_appz
             InitializeComponent();
             menuList = new List<MasterPageItem>();
 
-
             //Fot Ios icons
             var page1 = new MasterPageItem() { Title = "Leave Of A User", TargetType = typeof(FirstView) };
             var page2 = new MasterPageItem() { Title = "All Leave Request", TargetType = typeof(FirstView) };
@@ -41,7 +40,9 @@ namespace Leave_appz
             // Setting our list to be ItemSource for ListView in MasterDetailPage.xaml
             navigationDrawerList.ItemsSource = menuList;
             // Initial navigation, this can be used for our home page
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ContentPage)));
+            Type page = page1.TargetType;
+           // Detail = new NavigationPage((Page)Activator.CreateInstance(page)) { BarBackgroundColor = Color.DarkOrange };
+            //Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ContentPage)));
 
 
             this.BindingContext = new
@@ -52,8 +53,9 @@ namespace Leave_appz
                  //Footer = "         -------- Welcome To HotelPlaza --------           "
                 };
             
-            Type page = page1.TargetType;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+            
+            Detail = new NavigationPage((Page)Activator.CreateInstance(page)) { BarBackgroundColor = Color.DarkOrange };
+           // Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
 
             //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
@@ -64,7 +66,7 @@ namespace Leave_appz
 
             var item = (MasterPageItem)e.SelectedItem;
             Type page = item.TargetType;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(page)) { BarBackgroundColor = Color.DarkOrange };
             IsPresented = false;
        }
 

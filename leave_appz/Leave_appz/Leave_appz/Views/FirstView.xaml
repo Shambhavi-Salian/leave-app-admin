@@ -4,16 +4,8 @@
              x:Class="Leave_appz.Views.FirstView"
              BackgroundImage="background.png">
     <StackLayout Orientation="Vertical">
-        <Label
-           Text="1234567890_ID" 
-           Margin="30,20,6,0"
-           TextColor="White"
-           FontSize="Medium"/>
 
-        <Label Text="SHAMBHAVI" 
-           Margin="30,10,6,0"
-           TextColor="White"
-           FontSize="Medium"/>
+        <Picker x:Name="picker" TextColor="White" SelectedIndexChanged="OnPickerSelectedIndexChanged"/>
 
         <Grid HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand">
@@ -28,15 +20,16 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="0" Text="Date"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="0" Text="1/1/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="0" Text="2/2/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="1" Text="Type Of Leave" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="0" Grid.Column="2" Text="Status" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="1" Grid.Column="2" Text="Granted" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label BackgroundColor="#e88a20" Grid.Row="2" Grid.Column="2" Text="Rejected" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+
+            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="0" Text="Date"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="0" Text="1/1/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="0" Text="2/2/18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="1" Text="Type Of Leave" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="1" Text="Sick" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="2" Text="Status" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="2" Text="Granted" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="2" Text="Rejected" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
         </Grid>
         <StackLayout>
 
