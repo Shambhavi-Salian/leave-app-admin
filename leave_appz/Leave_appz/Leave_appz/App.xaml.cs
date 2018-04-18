@@ -7,7 +7,7 @@ namespace Leave_appz
         public App()
         {
             InitializeComponent();
-            MainPage = new Leave_appzPage();
+            MainPage = new MainNavigationPage();
             //SET PRIMARY TOOLBAR COLOR
             Current.Resources = new ResourceDictionary();
             Color xamarin_color = Color.DarkOrange;

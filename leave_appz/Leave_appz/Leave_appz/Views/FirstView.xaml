@@ -5,9 +5,13 @@
              BackgroundImage="background.png">
     <StackLayout Orientation="Vertical">
 
-        <Picker x:Name="picker" TextColor="White" SelectedIndexChanged="OnPickerSelectedIndexChanged"/>
+        <Picker x:Name="EmployeeList" Title ="Select the user" VerticalOptions="CenterAndExpand" TextColor="White" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+            <Picker.Items>
 
-        <Grid HorizontalOptions="CenterAndExpand"
+            </Picker.Items>
+        </Picker>
+
+        <!--<Grid HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
@@ -30,30 +34,60 @@
             <Label BackgroundColor="#f4a227" Grid.Row="0" Grid.Column="2" Text="Status" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
             <Label BackgroundColor="#f4a227" Grid.Row="1" Grid.Column="2" Text="Granted" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
             <Label BackgroundColor="#f4a227" Grid.Row="2" Grid.Column="2" Text="Rejected" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-        </Grid>
+        </Grid>-->
+
+        <WebView x:Name="leaveDetailsWV"  Margin="0, 2, 0, 0"
+
+                   RelativeLayout.XConstraint=
+                       "{ConstraintExpression Type=RelativeToParent,
+                                               Property=X,
+                                               Factor=1,
+                                               Constant=10}"
+                   
+                       RelativeLayout.YConstraint=
+                       "{ConstraintExpression Type=RelativeToParent,
+                                               Property=Y,
+                                               Factor=1,
+                                               Constant=130}"
+                   
+                       RelativeLayout.WidthConstraint=
+                       "{ConstraintExpression Type=RelativeToParent,
+                                               Property=Width,
+                                               Factor=1,
+                                               Constant=-10}"
+
+                       RelativeLayout.HeightConstraint=
+                        "{ConstraintExpression Type=RelativeToParent,
+                                               Property=Height,
+                                               Factor=1,
+                                               Constant=-130}" />
+        
         <StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Frame CornerRadius="10"  
+                <Frame CornerRadius="15"  
                 BackgroundColor="White"
-                Margin="60,0,0,0">
-                    <Label Text="+3"
+                Margin="60,0,0,0" WidthRequest="30" HeightRequest="30">
+                    <Label x:Name="sick"
+                        Text="00"
                         TextColor="Black"
-                        FontSize="Large"/>
+                        FontSize="Medium"/>
                 </Frame>
-                <Frame CornerRadius="10"  
+                <Frame CornerRadius="15"  
                 BackgroundColor="White"
-                Margin="47,0,0,0">
-                    <Label Text="+8"
+                Margin="47,0,0,0" WidthRequest="30" HeightRequest="30">
+                    <Label x:Name="casual"
+                        Text="00"
                         TextColor="Black"
-                        FontSize="Large"/>
+                        FontSize="Medium"/>
                 </Frame>
-                <Frame CornerRadius="10"  
+                <Frame CornerRadius="15"  
                 BackgroundColor="White"
-                Margin="37,0,0,0">
-                    <Label Text="+9"                       
+                Margin="37,0,0,0" WidthRequest="30" HeightRequest="30">
+                    <Label x:Name="earned"
+                        Text="00"                  
                         TextColor="Black"
-                        FontSize="Large"/>
+                        FontSize="Medium"/>
                 </Frame>
             </StackLayout>
 

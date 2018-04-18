@@ -16,7 +16,7 @@
             this.user_password = password;
         }
 
-        public bool checkInformation()
+        public bool CheckInformation()
         {
             if (!this.email_id.Equals("") && !this.user_password.Equals(""))
                 return true;
@@ -24,6 +24,10 @@
                 return false;
         }
 
-       
+    }
+
+    public class UserLeaveCount
+    {
+        public string leave_count { get; set; }
     }
 }

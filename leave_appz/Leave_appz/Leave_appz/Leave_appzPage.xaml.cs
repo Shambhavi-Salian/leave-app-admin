@@ -21,66 +21,83 @@ namespace Leave_appz
             DisplayAlert("Warning", message, "Ok");
         }
 
+        
         void LoginProcedure(object sender, EventArgs eventArgs)
         {
             UserDataModel userDataModel = new UserDataModel(user_email.Text, user_password.Text);
-            if (userDataModel.checkInformation())
+            NetworkModel.NetworkManager networkManager = new NetworkModel.NetworkManager();
+            if (networkManager.IsNetworkAvailable())
             {
-                var RestURL = "http://zymolytic-brass.000webhostapp.com/?id=2";
-                //RestService restService = new RestService();
-                //restService.PostRequest(RestURL, userDataModel);
-                PostRequest(RestURL, userDataModel);
+                if (userDataModel.CheckInformation())
+                {
+                    var RestURL = "http://zymolytic-brass.000webhostapp.com/?id=2";
+                    //RestService restService = new RestService();
+                    //restService.PostRequest(RestURL, userDataModel);
+                    PostRequest(RestURL, userDataModel);
+
+                }
+
+                else
+                {
+                    DisplayAlertMessage("Username and Password text fields are empty");
+                }
 
             }
-
             else
             {
-                DisplayAlertMessage("Username and Password text fields are empty");
+                DisplayAlertMessage("No network, please check your internet connection and try again");
             }
-
         }
 
 
-        async void PostRequest(string URL, UserDataModel userDataModel)
+        public async void PostRequest(string URL, UserDataModel userDataModel)
         {
-            System.Diagnostics.Debug.WriteLine("asa");
-            var formContent = new FormUrlEncodedContent(new[]
-                {
+            NetworkModel.NetworkManager networkManager = new NetworkModel.NetworkManager();
+            if(networkManager.IsNetworkAvailable())
+            {
+                System.Diagnostics.Debug.WriteLine("asa");
+                var formContent = new FormUrlEncodedContent(new[]
+                    {
                new KeyValuePair<string, string>("id", "1"),
                new KeyValuePair<string, string>("useremail", userDataModel.email_id),
                new KeyValuePair<string, string>("password", userDataModel.user_password),
            });
 
-            var myHttpClient = new HttpClient();
-            var response = await myHttpClient.PostAsync(URL, formContent);
+                var myHttpClient = new HttpClient();
+                var response = await myHttpClient.PostAsync(URL, formContent);
 
-            var json = await response.Content.ReadAsStringAsync();
-            System.Diagnostics.Debug.WriteLine(json);
+                var json = await response.Content.ReadAsStringAsync();
+                System.Diagnostics.Debug.WriteLine(json);
 
-            try
-            {
-                var userModel = JsonConvert.DeserializeObject<JsonModelClass.UserDataModel>(json);
-                if (userModel.email_id.Trim().Equals(user_email.Text.Trim()) && userModel.user_password.Trim().Equals(user_password.Text.Trim()))
+                try
                 {
-                    Application.Current.Properties["email"] = user_email.Text.Trim();
-                    Application.Current.Properties["password"] = user_password.Text.Trim();
-                    //await DisplayAlert("Warning", "login", "ok");
-                    Application.Current.MainPage = new MainNavigationPage();
-                    // await Navigation.PushAsync(new MainNavigationPage());
+                    var userModel = JsonConvert.DeserializeObject<JsonModelClass.UserDataModel>(json);
+                    if (userModel.email_id.Trim().Equals(user_email.Text.Trim()) && userModel.user_password.Trim().Equals(user_password.Text.Trim()))
+                    {
+                        Application.Current.Properties["email"] = user_email.Text.Trim();
+                        Application.Current.Properties["password"] = user_password.Text.Trim();
+                        //await DisplayAlert("Warning", "login", "ok");
+                        Application.Current.MainPage = new MainNavigationPage();
+                        // await Navigation.PushAsync(new MainNavigationPage());
+                    }
+                    else
+                    {
+                        await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
+                    }
                 }
-                else
+                catch (JsonSerializationException ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
                     await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
                 }
+
             }
-            catch (JsonSerializationException ex)
+            else
             {
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
-                await DisplayAlert("Warning", "Wrong User Name Or Password", "ok");
+                await DisplayAlert("Warning", "No network, please check your internet connection and try again", "ok");
             }
-
-
-        }
+            
+    }
 
 
         public async void CompareCredentials(UserDataModel userModel)
