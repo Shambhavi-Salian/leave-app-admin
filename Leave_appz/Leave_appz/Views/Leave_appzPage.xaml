@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:Leave_appz" 
-    x:Class="Leave_appz.Views.Leave_appzPage">
-    <RelativeLayout>
-            
-            <Image x:Name="backgroundImage" Aspect="AspectFill"
+    x:Class="Leave_appz.Leave_appzPage">
+    <RelativeLayout BackgroundColor="DarkOrange">
+
+        <Image x:Name="backgroundImage" Aspect="AspectFill"
                         RelativeLayout.WidthConstraint=
                         "{ConstraintExpression Type=RelativeToParent,
                                                Property=Width,
@@ -16,7 +16,7 @@
                                                Property=Height,
                                                Factor=1}" />
 
-            <Image x:Name="whitelogoImage" Aspect="AspectFit"
+        <Image x:Name="whitelogoImage" Aspect="AspectFit"
                         RelativeLayout.WidthConstraint=
                         "{ConstraintExpression Type=RelativeToParent,
                                                Property=Width,
@@ -39,7 +39,7 @@
                                                ElementName=backgroundImage,
                                                Constant=10}"/>
 
-             <Label Text="App Name" FontAttributes="Bold" FontSize="25" TextColor="White" HorizontalTextAlignment="Center"
+        <Label Text="Leave App" FontAttributes="Bold" FontSize="25" TextColor="White" HorizontalTextAlignment="Center"
                      RelativeLayout.YConstraint=
                      "{ConstraintExpression Type=RelativeToView,
                                                Property=Y,
@@ -53,7 +53,7 @@
                                               Factor=1}" />
 
 
-               <Label Text="Some words about the app to fill the space jkhfd jgbfbg dhgjsl dshgjs sdkhgfsdl sdhkgids skdhgidsk dfbdsj dsjhfsd yufy"  FontSize="20" Margin="15,0,15,0" TextColor="#CCffffff" HorizontalTextAlignment="Center"
+        <Label Text="Admin"  FontSize="20" Margin="15,0,15,0" TextColor="#CCffffff" HorizontalTextAlignment="Center"
                      RelativeLayout.YConstraint=
                      "{ConstraintExpression Type=RelativeToView,
                                                Property=Y,
@@ -66,7 +66,7 @@
                                                ElementName=backgroundImage,
                                                Factor=1}" />
 
-               <local:CustomEntry Keyboard="Email" Placeholder="Username" TextColor="White" FontSize="23" PlaceholderColor="#BFffffff" Margin="15" HorizontalTextAlignment="Start" BackgroundColor="Transparent"
+        <local:CustomEntry Keyboard="Email" Placeholder="Username" TextColor="White" FontSize="23" PlaceholderColor="#BFffffff" Margin="15" HorizontalTextAlignment="Start" BackgroundColor="Transparent" x:Name="user_email"
                        RelativeLayout.YConstraint=
                        "{ConstraintExpression Type=RelativeToView,
                                                 Property=Y,
@@ -83,7 +83,7 @@
 
 
 
-                <local:CustomEntry IsPassword="true" Placeholder="Password"  PlaceholderColor="#BFffffff" Margin="15" TextColor="White" FontSize="23" HorizontalTextAlignment="Start" BackgroundColor="Transparent"
+        <local:CustomEntry IsPassword="true" Placeholder="Password"  PlaceholderColor="#BFffffff" Margin="15" TextColor="White" FontSize="23" HorizontalTextAlignment="Start" BackgroundColor="Transparent" x:Name="user_password"
                       RelativeLayout.YConstraint=
                       "{ConstraintExpression Type=RelativeToView,
                                               Property=Y,
@@ -98,7 +98,7 @@
 
 
 
-               <local:CustomButton Text="Sign In"  FontSize="22" BackgroundColor="#BFffffff" BorderRadius="25" Margin="15" TextColor="#fc3b00" HeightRequest="50" 
+        <local:CustomButton Text="Sign In"  FontSize="22" BackgroundColor="#BFffffff" BorderRadius="25" Margin="15" TextColor="#fc3b00" HeightRequest="50" Clicked="LoginProcedure" x:Name="btn_login"
                     RelativeLayout.YConstraint=
                     "{ConstraintExpression Type=RelativeToParent,
                                             Property=Height,
@@ -121,5 +121,5 @@
 
 
 
-            </RelativeLayout>
-    </ContentPage>
+    </RelativeLayout>
+</ContentPage>

@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Leave_appz.Views;
 
 namespace Leave_appz
 {
@@ -7,7 +8,7 @@ namespace Leave_appz
         public App()
         {
             InitializeComponent();
-            MainPage = new MainNavigationPage();
+            MainPage = new Leave_appzPage();
             //SET PRIMARY TOOLBAR COLOR
             Current.Resources = new ResourceDictionary();
             Color xamarin_color = Color.DarkOrange;

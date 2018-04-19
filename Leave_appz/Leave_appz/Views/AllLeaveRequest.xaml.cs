@@ -11,7 +11,7 @@ using Leave_appz.ViewModels;
 using Leave_appz.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Plugin.Connectivity;
+
 
 namespace Leave_appz.Views
 {

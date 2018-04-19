@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Leave_appz.ViewModels;
 
 namespace Leave_appz.UnitTest
 {
@@ -11,7 +12,7 @@ namespace Leave_appz.UnitTest
         {
             //var validate = new JsonModelClass.UserDataModel();
             //Assert.IsTrue(validate.ApiResult("722"), "");
-            var model = new JsonModelClass.UserDataModel();
+            var model = new UserDataModel();
             model.email_id = "seema";
             model.user_password = "123";
             Assert.IsTrue(model.CheckInformation(), "Username and Password text fields are not empty");
@@ -22,7 +23,7 @@ namespace Leave_appz.UnitTest
         {
             //var validate = new JsonModelClass.UserDataModel();
             //Assert.IsTrue(validate.ApiResult("722"), "");
-            var model = new JsonModelClass.UserDataModel();
+            var model = new UserDataModel();
             model.email_id = "";
             model.user_password = "";
             Assert.IsFalse(model.CheckInformation(), "Username and Password text fields are empty");

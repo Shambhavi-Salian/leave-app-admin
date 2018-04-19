@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\leave_appz",
-    "\\leave_appz\\Leave_appz"
+    "\\Leave_appz",
+    "\\Leave_appz\\Leave_appz",
+    "\\Leave_appz\\Leave_appz\\ViewModels",
+    "\\Leave_appz\\Leave_appz\\Views"
   ],
-  "SelectedNode": "\\leave_appz\\Leave_appz\\Leave_appz.sln",
+  "SelectedNode": "\\Leave_appz\\Leave_appz.sln",
   "PreviewInSolutionExplorer": false
 }

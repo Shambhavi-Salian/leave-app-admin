@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="CustomButton.cs" />
     <Compile Include="CustomEntry.cs" />
+    <Compile Include="ViewModels\UserDataModel.cs" />
     <Compile Include="Views\CurrentdayAbsent.xaml.cs">
       <DependentUpon>CurrentdayAbsent.xaml</DependentUpon>
     </Compile>
@@ -60,11 +61,9 @@
     <Compile Include="Views\MainNavigationPage.xaml.cs">
       <DependentUpon>MainNavigationPage.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Models\MasterPageItem.cs" />
     <Compile Include="NetworkModel\NetworkManager.cs" />
     <Compile Include="MyDataSource\MyData.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
@@ -75,17 +74,14 @@
     <Compile Include="Views\LeaveInfo.xaml.cs">
       <DependentUpon>LeaveInfo.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="ViewMain.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
-
     <Compile Include="Models\User.cs" />
     <Compile Include="Views\AllLeaveRequest.xaml.cs">
       <DependentUpon>AllLeaveRequest.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\UserViewModel.cs" />
-
     <Compile Include="Views\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>
@@ -95,7 +91,6 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-
     <Reference Include="Plugin.Connectivity, Version=4.0.0.186, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Connectivity.4.0.0.186-beta\lib\netstandard1.0\Plugin.Connectivity.dll</HintPath>
     </Reference>
@@ -103,14 +98,13 @@
       <HintPath>..\packages\Xam.Plugin.Connectivity.4.0.0.186-beta\lib\netstandard1.0\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Messaging.5.1.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
+      <HintPath>..\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Messaging.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Messaging.5.1.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Xam.Plugins.Messaging.5.2.0\lib\netstandard1.0\Plugin.Messaging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>

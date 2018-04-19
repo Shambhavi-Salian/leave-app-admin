@@ -14,7 +14,7 @@ namespace Leave_appz.ViewModels
 
         {
 
-        private bool _isRefreshing = false;
+      
 
         private ObservableCollection<User> users;
             public ObservableCollection<User> Users
