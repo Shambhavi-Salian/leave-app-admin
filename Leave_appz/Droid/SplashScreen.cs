@@ -21,7 +21,7 @@ namespace Leave_Appz.Droid
 
             Task startupWork = new Task(() =>
             {
-                Task.Delay(3000);
+                Task.Delay(1500);
             });
 
             startupWork.ContinueWith(t =>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Leave_appz.Views.AllLeaveRequest"
+             Title="All Leave Request"
+    
+             BackgroundImage="background.png">
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+            <StackLayout     BackgroundColor="Transparent">
+                <ListView 
+        x:Name="leaveListView"
+        ItemsSource="{Binding Users}"
+          HasUnevenRows="True"
+        
+        SeparatorVisibility="None"
+                VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="Transparent"
+                  IsPullToRefreshEnabled="True"
+              Refreshing="ListItems_Refreshing"
+           RefreshCommand="{Binding RefreshCommand}"
+           IsRefreshing="{Binding IsRefreshing}">
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                IsClippedToBounds="False"
+                HasShadow="True"
+                CornerRadius="12"
+                HorizontalOptions="FillAndExpand"
+                         Margin="3,4,6,4">
+                                    <StackLayout Margin="3,0,6,0"
+                                 BackgroundColor="White"
+                                  >
+                                        <Label Text="{Binding auto_id}"
+                                  Margin="4,1,8,1"
+                               FontAttributes="Bold"
+                               FontSize="Medium" 
+                               TextColor="OrangeRed"
+                                  />
+                                        <Label Text="{Binding email_id}"
+                                     Margin="4,1,8,1"
+                               FontAttributes="Bold"
+                               FontSize="Medium" 
+                               TextColor="OrangeRed"/>
+                                        <Label Text="{Binding type_of_leave}"
+                               Margin="4,1,8,1"
+                               FontSize="Small" 
+                                   TextColor="OrangeRed"/>
+                                        <Label Text="{Binding leave_date}"
+                               Margin="4,1,8,1"
+                               FontSize="Small" 
+                               TextColor="OrangeRed"/>
+                                        <Label Text="{Binding description}"
+                               Margin="4,1,8,1"
+                               FontSize="Small" 
+                               TextColor="OrangeRed"/>
+
+                                        <StackLayout Margin="16,2,16,2"
+                                 BackgroundColor="White"
+                                     Orientation="Horizontal">
+                                            <Button Text="Grant"
+                           
+                                        
+                                     
+                                     Margin="0,0,4,0"
+                                    BackgroundColor="OrangeRed"
+                                    TextColor="White"
+                                        BorderRadius="10"
+                                        VerticalOptions="Start"
+        HorizontalOptions="FillAndExpand"
+                                        Clicked="OnButtonClicked"/>
+                                            <Button Text="Reject"
+                        
+                                    Margin="4,0,0,0"
+                                    TextColor="White"
+                                    BackgroundColor="OrangeRed"
+                                        BorderRadius="10"
+                                        VerticalOptions="End"
+        HorizontalOptions="FillAndExpand"
+                                        Clicked="OnButtonClicked"
+                                        />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        <AbsoluteLayout 
+            x:Name="progress_parent"
+            BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    >
+            <ActivityIndicator Color="White"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,0.1,0.1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           IsVisible="True"
+                           IsRunning="True"/>
+        </AbsoluteLayout>
+        <AbsoluteLayout BackgroundColor="Transparent"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,0.5,0.5"
+                    AbsoluteLayout.LayoutFlags="All"
+                        x:Name="no_data"
+                            IsVisible="False">
+            <Label 
+                x:Name="empty_label"
+                Text="No leave request"
+         AbsoluteLayout.LayoutBounds="0.9,0.2,0.9,0.2"
+                           AbsoluteLayout.LayoutFlags="All"
+           FontAttributes="Bold"
+           FontSize="Medium" 
+           TextColor="White"
+               />
+        </AbsoluteLayout>
+    </AbsoluteLayout>
+  
+
+</ContentPage>
