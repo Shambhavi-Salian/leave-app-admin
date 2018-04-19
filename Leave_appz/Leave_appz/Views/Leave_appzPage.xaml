@@ -53,7 +53,7 @@
                                               Factor=1}" />
 
 
-        <Label Text="Admin"  FontSize="20" Margin="15,0,15,0" TextColor="#CCffffff" HorizontalTextAlignment="Center"
+        <Label Text="Admin"  FontSize="25" FontAttributes="Bold" Margin="15,0,15,0" TextColor="#CCffffff" HorizontalTextAlignment="Center"
                      RelativeLayout.YConstraint=
                      "{ConstraintExpression Type=RelativeToView,
                                                Property=Y,
